@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Intelligence Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>Customer Intelligence Dashboard</h1>
+
+    <div class="container">
+
+        <!-- CUSTOMER SEGMENTATION -->
+
+        <h2>Customer Segmentation</h2>
+
+        <input type="number"
+               id="age"
+               placeholder="Age">
+
+        <input type="number"
+               id="purchase_amount"
+               placeholder="Purchase Amount">
+
+        <input type="number"
+               step="0.1"
+               id="review_rating"
+               placeholder="Review Rating">
+
+        <input type="number"
+               id="previous_purchases"
+               placeholder="Previous Purchases">
+
+        <input type="number"
+               id="purchases_per_year"
+               placeholder="Purchases Per Year">
+
+        <button onclick="segmentCustomer()">
+            Segment Customer
+        </button>
+
+        <div id="segmentResult"></div>
+
+        <hr>
+
+        <!-- SPENDING PREDICTION -->
+
+        <h2>Spending Prediction</h2>
+
+        <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+
+        <select id="category">
+            <option value="Clothing">Clothing</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Footwear">Footwear</option>
+            <option value="Accessories">Accessories</option>
+        </select>
+
+        <select id="season">
+            <option value="Winter">Winter</option>
+            <option value="Summer">Summer</option>
+            <option value="Spring">Spring</option>
+            <option value="Autumn">Autumn</option>
+        </select>
+
+        <input type="number"
+               step="0.1"
+               id="spending_review_rating"
+               placeholder="Review Rating">
+
+        <input type="number"
+               id="spending_previous_purchases"
+               placeholder="Previous Purchases">
+
+        <select id="subscription_status">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+
+        <input type="number"
+               id="spending_frequency_days"
+               placeholder="Purchase Frequency Days">
+
+        <button onclick="predictSpending()">
+            Predict Spending
+        </button>
+
+        <div id="spendingResult"></div>
+
+        <hr>
+
+        <!-- SUBSCRIPTION PREDICTION -->
+
+        <h2>Subscription Prediction</h2>
+
+        <select id="shipping_type">
+            <option value="Express">Express</option>
+            <option value="Standard">Standard</option>
+            <option value="Free Shipping">Free Shipping</option>
+        </select>
+
+        <input type="number"
+               id="subscription_frequency_days"
+               placeholder="Purchase Frequency Days">
+
+        <button onclick="predictSubscription()">
+            Predict Subscription
+        </button>
+
+        <div id="subscriptionResult"></div>
+
+        <hr>
+
+        <!-- GEMINI AI INSIGHT -->
+
+        <h2>AI Customer Insight</h2>
+
+        <button onclick="generateInsight()">
+            Generate AI Insight
+        </button>
+
+        <div id="aiInsight"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
