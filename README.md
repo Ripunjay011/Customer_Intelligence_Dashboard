@@ -1,330 +1,373 @@
-# Customer Intelligence Dashboard Using Machine Learning, FastAPI and Generative AI
+![Python](https://img.shields.io/badge/Python-3.12-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange)
+![PowerBI](https://img.shields.io/badge/PowerBI-Analytics-yellow)
+![Google Gemini](https://img.shields.io/badge/Google-Gemini-blueviolet)
+![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
-## Overview
+# Customer Intelligence Dashboard using Machine Learning, FastAPI & Generative AI
 
-The Customer Intelligence Dashboard is an end-to-end analytics platform that combines Machine Learning, FastAPI, Generative AI (Google Gemini), Power BI, and Web Technologies to transform customer shopping data into actionable business intelligence.
+An end-to-end Customer Intelligence Dashboard that combines **Machine Learning**, **FastAPI**, **Google Gemini**, **Power BI**, and **Web Technologies** to transform customer shopping data into actionable business intelligence.
 
-The system performs customer segmentation, spending prediction, subscription prediction, and AI-powered insight generation through an interactive dashboard. The goal is to help businesses improve customer engagement, marketing effectiveness, customer retention, and revenue growth through data-driven decision-making.
+The system performs customer segmentation, spending prediction, subscription prediction, and AI-powered business insight generation through an interactive dashboard, enabling businesses to make data-driven decisions and improve customer engagement.
 
 ---
 
 ## Features
 
 ### Customer Segmentation
-
-* K-Means Clustering
-* Automatic customer classification
-* Real-time segment prediction
-* Business-friendly segment labels
+- K-Means Clustering
+- Real-time customer segmentation
+- Business-friendly segment labels
 
 ### Spending Prediction
-
-* Machine Learning regression model
-* Predicts expected customer spending
-* Supports revenue forecasting and customer value estimation
+- Linear Regression model
+- Predicts expected customer spending
+- Supports revenue forecasting
 
 ### Subscription Prediction
+- Logistic Regression classifier
+- Predicts subscription likelihood
+- Generates subscription probability
 
-* Logistic Regression classification model
-* Predicts subscription likelihood
-* Provides subscription probability scores
-* Supports targeted marketing campaigns
-
-### AI-Powered Insights
-
-* Integrated with Google Gemini API
-* Generates:
-
-  * Customer Insights
-  * Business Recommendations
-  * Marketing Strategies
-* Converts model predictions into actionable business intelligence
+### AI-Powered Business Insights
+- Google Gemini API integration
+- Customer insights
+- Business recommendations
+- Marketing strategies
 
 ### Interactive Dashboard
+- HTML
+- CSS
+- JavaScript
+- FastAPI backend
+- Real-time predictions
 
-* Built using HTML, CSS, and JavaScript
-* Real-time prediction interface
-* User-friendly design
-
-### Business Intelligence Dashboard
-
-* Power BI integration
-* Revenue analysis
-* Customer behavior visualization
-* Subscription analysis
-* Interactive filtering
+### Business Intelligence
+- Power BI Dashboard
+- Interactive analytics
+- Customer behaviour visualization
+- Revenue analysis
 
 ---
 
-## Project Architecture
+# Application Preview
+
+## Customer Intelligence Dashboard
+
+![Dashboard](docs/screenshots/dashboard_home.png)
+
+---
+
+## Customer Segmentation
+
+![Segmentation](docs/screenshots/customer_segmentation.png)
+
+---
+
+## Spending Prediction
+
+![Spending](docs/screenshots/spending_prediction.png)
+
+---
+
+## Subscription Prediction
+
+![Subscription](docs/screenshots/subscription_prediction.png)
+
+---
+
+## AI-Powered Business Insight
+
+![AI Insight](docs/screenshots/ai_customer_insight.png)
+
+---
+
+## Power BI Dashboard
+
+![Power BI](docs/screenshots/powerbi_dashboard.png)
+
+---
+
+# Project Architecture
 
 ```text
-Customer Dataset
-        |
-        v
-Data Preprocessing
-        |
-        +-------------------------+
-        |                         |
-        v                         v
-Customer Segmentation      Predictive Models
-(K-Means Clustering)       (Regression + Classification)
-        |                         |
-        +-----------+-------------+
-                    |
-                    v
-                FastAPI
-                    |
-      +-------------+-------------+
-      |                           |
-      v                           v
-Frontend Dashboard         Gemini AI
-(HTML/CSS/JavaScript)    Business Insights
-      |
-      v
-Real-Time Customer Intelligence
+                 Customer Shopping Dataset
+                           │
+                           ▼
+        Data Preprocessing & Feature Engineering
+                           │
+         ┌─────────────────┼─────────────────┐
+         ▼                 ▼                 ▼
+ Customer Segmentation  Spending Prediction  Subscription Prediction
+   (K-Means)          (Linear Regression)   (Logistic Regression)
+         │                 │                 │
+         └─────────────────┼─────────────────┘
+                           ▼
+                    FastAPI Backend
+                           │
+          ┌────────────────┼────────────────┐
+          ▼                ▼                ▼
+  REST API Endpoints  Frontend Dashboard  Google Gemini AI
+                                      │
+                                      ▼
+                      AI Business Insights & Recommendations
+                                      │
+                                      ▼
+                         Customer Intelligence Dashboard
 ```
 
 ---
 
-## Dataset
+# Project Structure
 
-### Dataset Size
+```text
+Customer_Intelligence_Dashboard/
+│
+├── analytics/
+│   ├── Customer_Intelligence_Dashboard.pbix
+│   └── customer_analysis.sql
+│
+├── api/
+│   ├── main.py
+│   ├── test_api.py
+│   ├── .env.example
+│   └── requirements.txt
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── docs/
+│   ├── Problem_Statement.pdf
+│   ├── Project_Report.pdf
+│   ├── Project_Presentation.pptx
+│   └── screenshots/
+│
+├── frontend/
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+│
+├── ml/
+│   ├── data_preprocessing.py
+│   ├── customer_segmentation.py
+│   ├── spending_prediction.py
+│   └── subscription_prediction.py
+│
+├── models/
+│
+├── notebooks/
+│   └── customer_analysis.ipynb
+│
+├── README.md
+├── LICENSE
+├── requirements.txt
+└── .gitignore
+```
 
-* Records: 3900
-* Features: Customer demographics, purchasing behavior, product preferences, subscription information, and shopping history.
+---
 
-### Key Features
+# Dataset
 
-* Age
-* Gender
-* Purchase Amount
-* Review Rating
-* Previous Purchases
-* Category
-* Season
-* Subscription Status
-* Shipping Type
-* Purchase Frequency
+**Dataset Size**
+
+- 3,900 Customer Records
+
+**Features**
+
+- Age
+- Gender
+- Purchase Amount
+- Review Rating
+- Previous Purchases
+- Product Category
+- Season
+- Subscription Status
+- Shipping Type
+- Purchase Frequency
 
 ### Feature Engineering
 
-* Purchase Frequency Days
-* Purchases Per Year
+- Purchase Frequency (Days)
+- Purchases Per Year
 
 ---
 
-## Machine Learning Models
+# Machine Learning Models
 
-### Customer Segmentation
-
-Algorithm:
-
-* K-Means Clustering
-
-Generated Segments:
-
-* Premium Loyal Customers
-* Low-Spend Senior Customers
-* Young Satisfied Shoppers
-* Loyal Repeat Customers
-* High-Spend Occasional Buyers
-* Frequent Active Buyers
+| Task | Algorithm |
+|------|-----------|
+| Customer Segmentation | K-Means Clustering |
+| Spending Prediction | Linear Regression |
+| Subscription Prediction | Logistic Regression |
+| Data Balancing | SMOTE |
 
 ---
 
-### Spending Prediction
+# REST API Endpoints
 
-Algorithm:
+| Method | Endpoint |
+|---------|----------|
+| GET | `/` |
+| GET | `/model-status` |
+| POST | `/segment-customer` |
+| POST | `/predict-spending` |
+| POST | `/predict-subscription` |
+| POST | `/generate-insight` |
 
-* Linear Regression
+Swagger API Documentation:
 
-Performance:
-
-* RMSE: 23.73
-* MAE: 20.70
-* R² Score: -0.0067
-
----
-
-### Subscription Prediction
-
-Algorithm:
-
-* Logistic Regression
-
-Data Balancing:
-
-* SMOTE (Synthetic Minority Oversampling Technique)
-
-Performance:
-
-* Accuracy: 59.49%
-* Precision: 40.04%
-* Recall: 100%
-* F1 Score: 57.18%
-* ROC-AUC: 72.68%
-
----
-
-## API Endpoints
-
-### Home
-
-```http
-GET /
 ```
-
-### Model Status
-
-```http
-GET /model-status
-```
-
-### Customer Segmentation
-
-```http
-POST /segment-customer
-```
-
-### Spending Prediction
-
-```http
-POST /predict-spending
-```
-
-### Subscription Prediction
-
-```http
-POST /predict-subscription
-```
-
-### AI Insight Generation
-
-```http
-POST /generate-insight
+http://127.0.0.1:8000/docs
 ```
 
 ---
 
-## Technology Stack
+# Technology Stack
 
-### Backend
+## Programming Languages
 
-* Python
-* FastAPI
-* Uvicorn
+- Python
+- SQL
+- JavaScript
 
-### Machine Learning
+## Backend
 
-* Scikit-Learn
-* Pandas
-* NumPy
-* Imbalanced-Learn (SMOTE)
-* Joblib
+- FastAPI
+- Uvicorn
 
-### Frontend
+## Machine Learning
 
-* HTML
-* CSS
-* JavaScript
+- Scikit-Learn
+- Pandas
+- NumPy
+- Imbalanced-Learn (SMOTE)
+- Joblib
 
-### Generative AI
+## Frontend
 
-* Google Gemini API
+- HTML
+- CSS
+- JavaScript
 
-### Business Intelligence
+## Generative AI
 
-* Power BI
+- Google Gemini API
+
+## Business Intelligence
+
+- Power BI
+
+## Version Control
+
+- Git
+- GitHub
 
 ---
 
-## Installation
+# Installation
 
-### Clone Repository
+## Clone Repository
 
 ```bash
-git clone <repository-url>
-cd Customer-Intelligence-Dashboard
+git clone https://github.com/Ripunjay011/Customer_Intelligence_Dashboard.git
+
+cd Customer_Intelligence_Dashboard
 ```
 
-### Install Dependencies
+## Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Configure Environment Variables
+## Configure Environment Variables
 
-Create a `.env` file:
+Create a `.env` file inside the **api** folder.
 
 ```env
 GEMINI_API_KEY=YOUR_API_KEY
 ```
 
-### Run FastAPI Backend
+Example:
+
+```env
+GEMINI_API_KEY=AIzaSyXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+---
+
+## Start FastAPI Backend
 
 ```bash
 cd api
+
 uvicorn main:app --reload
 ```
 
-### Run Frontend
+---
+
+## Run Frontend
 
 ```bash
 cd frontend
+
 python -m http.server 5500
 ```
 
-Open:
+Open the application:
 
-```text
+```
 http://127.0.0.1:5500
 ```
 
 ---
 
-## Dashboard Workflow
+# Dashboard Workflow
 
-1. Enter customer details.
-2. Generate customer segment.
-3. Predict customer spending.
-4. Predict subscription likelihood.
-5. Generate AI-powered business insights.
-6. Analyze customer behavior using Power BI.
-
----
-
-## Business Benefits
-
-* Customer Segmentation
-* Revenue Forecasting
-* Subscription Growth
-* Personalized Marketing
-* Customer Retention
-* AI-Powered Decision Support
+1. Enter customer information.
+2. Generate Customer Segment.
+3. Predict Customer Spending.
+4. Predict Subscription Probability.
+5. Generate AI-Powered Business Insight.
+6. Explore customer analytics using Power BI.
 
 ---
 
-## Future Scope
+# Business Benefits
 
-* Customer Churn Prediction
-* Product Recommendation Systems
-* Cloud Deployment
-* Real-Time Analytics
-* Deep Learning Models
-* Retrieval-Augmented Generation (RAG)
-
----
-
-## Author
-
-Ripunjay Gogoi
-
-Personal Project – Customer Intelligence Dashboard
+- Customer Segmentation
+- Spending Forecasting
+- Subscription Prediction
+- Personalized Marketing
+- Customer Retention
+- AI-Powered Decision Support
+- Business Intelligence Reporting
 
 ---
 
-## License
+# Future Enhancements
 
-This project is intended for educational, portfolio, and research purposes.
+- Customer Churn Prediction
+- Product Recommendation System
+- Cloud Deployment (AWS / Azure)
+- Deep Learning Models
+- Real-Time Analytics
+- Retrieval-Augmented Generation (RAG)
+
+---
+
+# Author
+
+**Ripunjay Gogoi**
+
+B.Tech, Computer Science and Engineering
+
+National Institute of Technology Silchar
+
+---
+
+# License
+
+This project is licensed under the **MIT License**. See the `LICENSE` file for more details.
